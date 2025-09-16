@@ -14,7 +14,6 @@ app = FastAPI()
 
 DB_URL = os.getenv("DATABASE_URL")
 API_KEY = os.getenv("COLLECTOR_API_KEY")
-print("DEBUG inside FastAPI: COLLECTOR_API_KEY=', API_KEY")
 
 # Debug prints
 print("DEBUG: DATABASE_URL =", DB_URL)
