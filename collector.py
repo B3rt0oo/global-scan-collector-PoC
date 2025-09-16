@@ -16,8 +16,7 @@ DB_URL = os.getenv("DATABASE_URL")
 API_KEY = os.getenv("COLLECTOR_API_KEY")
 
 # Debug prints
-print("DEBUG: DATABASE_URL =", DB_URL)
-print("DEBUG: COLLECTOR_API_KEY =", API_KEY)
+print("DEBUG: DATABASE_URL loaded successfully")
 
 class Alert(BaseModel):
     src_ip: str
@@ -27,7 +26,7 @@ class Alert(BaseModel):
 
 @app.post("/api/alerts")
 def receive_alert(alert: Alert, authorization: str = Header(default="")):
-    print("DEBUG: Received Authorization header:", authorization)
+    print("DEBUG: Received Authorization header")
 
     if authorization != f"Bearer {API_KEY}":
         print("DEBUG: Unauthorized access attempt")
